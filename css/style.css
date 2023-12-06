@@ -1,123 +1,208 @@
 /*
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+GENERAL STYLE
 */
 
+@font-face {
+    font-family: "Comic Neue";
+    src: url(/ComicNeue-Light.ttf) format("truetype");
+}
+
+html {
+    text-align:center;
+    font-family:"Comic Neue";
+}
+
 body {
-    margin: 0;
-    height: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #1E1E2A;
-}
-
-/* .header-container {
-    margin: 100vh;
-    height: 100vw;
-    background-color: #60E1E0;
-    background-image: url('../img/background.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    background-color: #F9F9F9;
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    box-sizing: border-box;
-    padding: 0 112px;
-    position: relative;
+    margin: 0;
 }
 
-
-h1 {
-    font-size: 50px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-
-h2 {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-.social-midia {
-    margin-top: 1rem;
-    display: flex;
-}
-
-
-.social-midia a {
-    text-decoration: none;
-    color: #1E1E2A;
-    padding: 1rem 4rem;
-    border: 1px solid #1E1E2A;
-    min-width: 4rem;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    transition: .5s ease-in-out;
+a {
+    text-decoration-style: dotted;
+    text-decoration-thickness: 2px;
 }
 
 a:hover {
-    background: #ffffff;
+    text-decoration: none;
 }
 
-
-.checkbox-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+main {
+    flex: 1;
+    padding: 0 10px;
 }
 
-.checkbox {
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 9999;
-    transition: 400ms ease-in-out 0s;
+footer {
+    background-color: #404040;
+    color: #F9F9F9;
+    padding: 15px 0;
 }
 
-.checkbox trace {
-    width: 50px;
-    height: 2px;
-    background-color: #1E1E2A;
-    position: absolute;
-    border-radius: 4px;
-    transition: 0.5s ease-in-out;
+.headshot {
+    border-radius:50%;
+    object-fit: cover;
 }
 
-.checkbox trace:nth-child(1) {
-    top: 26px;
-    transform: rotate(0);
+.centered {
+    margin: 0 auto;
 }
 
-.checkbox trace:nth-child(2) {
-    top: 46px;
-    transform: rotate(0);
+/*
+EFFECTS
+*/
+
+/*
+Hover color changing effect
+*/
+.hoverease {
+    transition: all .25s ease-in;
+    -o-transition: all .2s ease-in;
+    -moz-transition: all .25s ease-in;
+    -webkit-transition: all .25s ease-in;
 }
 
-.checkbox trace:nth-child(3) {
-    top: 66px;
-    transform: rotate(0);
+.hoverease:hover {
+    transition: all .25s ease-out;
+    -o-transition: all .2s ease-out;
+    -moz-transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
 }
 
-#toggle {
-    display: none;
+/*The colors for the hover effect*/
+.connect {
+    font-size: 40px;
+    color: #F9F9F9;
 }
 
-.menu {
-    position: absolute;
-    top: 28px;
-    right: 30px;
-    background-color: transparent;
-    height: 4px;
-    width: 10px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 0px 0px #ffffff;
-    z-index: -1;
-    transition: 400ms ease-in-out 0s;
-} */
+.fa-linkedin:hover {
+    color: #1178B3;
+}
+
+.fa-twitter:hover {
+    color: #2AA3EF;
+}
+
+.fa-github:hover {
+    color: #A24CA1;
+}
+
+.fa-twitch:hover {
+    color: #6441a5;
+}
+
+.github {
+    color: #000000;
+}
+.github:hover {
+    color: #A24CA1;
+}
+
+.twitch {
+    color: #000000;
+}
+.twitch:hover {
+    color: #6441a5;
+}
+
+.vscode {
+    color:#000000;
+}
+.vscode:hover {
+    color:#23a8f2;
+}
+
+.coffee {
+    color: #000000;
+}
+.coffee:hover {
+    color: #503619;
+}
+
+/* Keyframes for the fade-in */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+    opacity:0;
+    opacity: 1 \9; /*just in case ie*/
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+
+.fade-in.one {
+    -webkit-animation-delay: 0.1s;
+    -moz-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.fade-in.two {
+    -webkit-animation-delay: .3s;
+    -moz-animation-delay: .3s;
+    animation-delay: .3s;
+}
+
+.fade-in.three {
+    -webkit-animation-delay: .6s;
+    -moz-animation-delay: .6s;
+    animation-delay: .6s;
+}
+.fade-in.four {
+    -webkit-animation-delay: .9s;
+    -moz-animation-delay: .9s;
+    animation-delay: .9s;
+}
+
+.fade-in.five {
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay:1.2s;
+    animation-delay: 1.2s;
+}
+
+.fade-in.six {
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+.fade-in.seven {
+    -webkit-animation-delay: 1.8s;
+    -moz-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+}
+
+.fade-in.eight {
+    -webkit-animation-delay: 2.1s;
+    -moz-animation-delay: 2.1s;
+    animation-delay: 2.1s;
+}
+.fade-in.nine {
+    -webkit-animation-delay: 2.4s;
+    -moz-animation-delay: 2.4s;
+    animation-delay: 2.4s;
+}
+.fade-in.ten {
+    -webkit-animation-delay: 2.7s;
+    -moz-animation-delay: 2.7s;
+    animation-delay: 2.7s;
+}
+.fade-in.eleven {
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    animation-delay: 3s;
+}
+.fade-in.twelve {
+    -webkit-animation-delay: 3.3s;
+    -moz-animation-delay: 3.3s;
+    animation-delay: 3.3s;
+}
